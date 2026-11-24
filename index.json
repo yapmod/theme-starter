@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "name": "Yapmod starter themes",
+  "description": "Two accent palettes for Yapin.",
+  "themes": [
+    {
+      "name": "Ocean",
+      "author": "Yapmod",
+      "description": "An ocean blue accent for links, highlights, and primary buttons.",
+      "url": "themes/ocean.theme.css"
+    },
+    {
+      "name": "Rose",
+      "author": "Yapmod",
+      "description": "A rose accent for links, highlights, and primary buttons.",
+      "url": "themes/rose.theme.css"
+    }
+  ]
+}

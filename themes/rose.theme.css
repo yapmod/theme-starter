@@ -1,0 +1,13 @@
+/**
+ * @name Rose
+ * @author Yapmod
+ * @description A rose accent for links, highlights, and primary buttons.
+ */
+:root {
+  --accent: #df7199;
+  --accent-hover: #ed86ac;
+  --accent-soft: #df719929;
+  --accent-fill: #a4345d;
+  --accent-fill-hover: #89294c;
+  --on-accent: #fff;
+}
