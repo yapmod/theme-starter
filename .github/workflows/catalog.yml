@@ -1,0 +1,42 @@
+name: Theme catalog
+on:
+  push:
+    branches-ignore: [theme-dist]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node scripts/build.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: theme-catalog
+          path: dist
+
+  publish:
+    needs: catalog
+    if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency: theme-publication
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: theme-catalog
+          path: dist
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: theme-dist
+          publish_dir: dist

@@ -1,0 +1,13 @@
+/**
+ * @name Ocean
+ * @author Yapmod
+ * @description An ocean blue accent for links, highlights, and primary buttons.
+ */
+:root {
+  --accent: #548dd8;
+  --accent-hover: #70a2e5;
+  --accent-soft: #548dd829;
+  --accent-fill: #315fa2;
+  --accent-fill-hover: #254c85;
+  --on-accent: #fff;
+}
